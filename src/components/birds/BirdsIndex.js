@@ -17,7 +17,7 @@ class BirdsIndex extends React.Component {
   render() {
     return (
       <div>
-        {this.state.foods.map(food => {
+        {this.state.foods.map(bird => {
           return(
             <div key={bird.id} className="image-tile col-md-4 col-sm-6 col-xs-12">
               <Link to={`/foods/${bird.id}`}>
