@@ -5,8 +5,8 @@ const birds  = require('../controllers/birds');
 
 // routes go here
 router.route('/birds')
-  .get(birds.index)
-  .post(birds.create);
+  .get(birds.index);
+// .post(birds.create);
 
 router.all('/*', (req, res) => res.notFound());
 
