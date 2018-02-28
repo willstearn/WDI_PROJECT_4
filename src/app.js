@@ -7,8 +7,11 @@ import { BrowserRouter as Router, Link, Route } from 'react-router-dom';
 // import BirdsShow  from './components/birds/BirdsShow';
 // import BirdsRoutes from './components/birds/BirdsRoutes';
 
+import Navbar from './components/utility/Navbar';
 import Routes from './components/utility/Routes';
 
+import 'bootstrap-css-only';
+import 'font-awesome/css/font-awesome.css';
 import './scss/style.scss';
 
 class App extends React.Component {
@@ -17,6 +20,12 @@ class App extends React.Component {
     return (
       <Router>
         <div className="container">
+          <header>
+            <h1><Link to="/">Tweetie Spy</Link></h1>
+            <Navbar />
+            <hr />
+            <i className="fa fa-cutlery" aria-hidden="true"></i>
+          </header>
           <main>
             <Routes />
           </main>
