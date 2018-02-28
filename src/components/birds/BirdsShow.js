@@ -2,8 +2,6 @@ import React    from 'react';
 import { Link } from 'react-router-dom';
 import Axios    from 'axios';
 
-import BackButton from '../utility/BackButton';
-
 
 class BirdsShow extends React.Component {
   state = {
