@@ -2,13 +2,17 @@ import React from 'react';
 
 import Autocomplete from 'react-google-autocomplete';
 import ReactFilestack from 'filestack-react';
+import BackButton from '../utility/BackButton';
 
 
 function SpotsForm({ handleSubmit, handleChange, handleOnLocationChange, spot, birds, handleImageUpload, errors }) {
   return (
     <div className="row">
       <div className="page-banner col-md-12">
+        <BackButton history={history} />
+
       </div>
+
       <form onSubmit={handleSubmit} className="col-md-6">
         <div className="form-group">
           <label>

@@ -39,6 +39,8 @@ class SpotsNew extends React.Component {
     this.setState({ spot, errors });
   }
 
+
+
   componentDidMount() {
     Axios
       .get('/api/birds', {
@@ -48,6 +50,8 @@ class SpotsNew extends React.Component {
       .catch(err => console.log(err));
 
   }
+
+
 
   render() {
     return (
