@@ -8,7 +8,6 @@ function birdsIndex(req, res, next) {
     .catch(next);
 }
 
-
 function birdsShow(req, res, next) {
   Bird
     .findById(req.params.id)
@@ -22,8 +21,5 @@ function birdsShow(req, res, next) {
 
 module.exports = {
   index: birdsIndex,
-  // create: createRoute,
   show: birdsShow
-  // update: updateRoute,
-  // delete: deleteRoute
 };

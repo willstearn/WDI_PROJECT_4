@@ -7,7 +7,7 @@ import Auth from '../../lib/Auth';
 
 class BirdsIndex extends React.Component {
   state = {
-    foods: []
+    birds: []
   }
 
   componentDidMount() {
@@ -22,15 +22,21 @@ class BirdsIndex extends React.Component {
   render() {
     return (
       <div>
-        {this.state.birds && this.state.birds.map(bird => {
-          return(
-            <div key={bird.id} className="image-tile col-md-4 col-sm-6 col-xs-12">
-              <Link to={`/foods/${bird.id}`}>
-                <img src={bird.image} className="img-responsive" />
-              </Link>
-            </div>
-          );
-        })}
+        <div className="row">
+          <div className="page-banner col-md-12">
+            { Auth.isAuthenticated() && <Link to="/birds" className="main-button"> <i className="fa fa-plus"  aria-hidden="true"></i>See Birds
+            </Link>}
+          </div>
+          {this.state.birds && this.state.birds.map(bird => {
+            return(
+              <div key={bird.id} className="image-tile col-md-4 col-sm-6 col-xs-12">
+                <Link to={`/birds/${bird.id}`}>
+                  <img src={bird.image} className="img-responsive" />
+                </Link>
+              </div>
+            );
+          })}
+        </div>
       </div>
     );
   }

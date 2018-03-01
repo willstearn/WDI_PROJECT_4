@@ -22,6 +22,7 @@ class App extends React.Component {
           <header>
             <h1><Link to="/">Tweetie Spy</Link></h1>
             {/* <Navbar /> */}
+            <Navbar />
             <hr />
             <i className="fa fa-cutlery" aria-hidden="true"></i>
           </header>
@@ -36,6 +37,7 @@ class App extends React.Component {
     );
   }
 }
+
 
 ReactDOM.render(
   <App />,
