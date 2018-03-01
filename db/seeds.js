@@ -22,6 +22,30 @@ const birdData = [{
   name: 'Adult Herring Gull',
   image: 'http://www.birdid.co.uk/Static/Images/Img00011V001.jpg',
   color: ['grey', 'white', 'yellow']
+},{
+  name: 'Long Tailed Tit',
+  image: 'http://www.birdid.co.uk/Static/Images/Img00013V001.jpg',
+  color: ['black', 'pink', 'white']
+},{
+  name: 'Male Mallard',
+  image: 'http://www.birdid.co.uk/Static/Images/Img00014V001.jpg',
+  color: ['brown', 'green', 'yellow']
+},{
+  name: 'Female Merlin',
+  image: 'http://www.birdid.co.uk/Static/Images/Img00013V001.jpg',
+  color: ['brown', 'cream']
+},{
+  name: 'Skylark',
+  image: 'http://www.birdid.co.uk/Static/Images/Img00019V001.jpg',
+  color: ['brown', 'white', 'buff']
+},{
+  name: 'Adult Song Thrush',
+  image: 'http://www.birdid.co.uk/Static/Images/Img01039V001.jpg',
+  color: ['brown', 'speckled']
+},{
+  name: 'Sedge Warbler',
+  image: 'http://www.birdid.co.uk/Static/Images/Img00040V001.jpg',
+  color: ['brown', 'grey']
 }];
 
 

@@ -3,6 +3,7 @@ const router = require('express').Router();
 const birds  = require('../controllers/birds');
 const spots  = require('../controllers/spots');
 const auth  = require('../controllers/auth');
+// const secureRoute = require('../lib/secureRoute');
 
 router.route('/birds')
   .get(birds.index);
@@ -10,6 +11,9 @@ router.route('/birds')
 
 // router.route('/birds/:id')
 //   .get(birds.show);
+
+router.route('/birds/:id')
+  .get(birds.show);
 
 router.route('/register')
   .post(auth.register);

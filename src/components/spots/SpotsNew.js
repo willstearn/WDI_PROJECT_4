@@ -9,8 +9,9 @@ class SpotsNew extends React.Component {
     spot: {
       bird: '',
       image: '',
-      location: ''
-    }
+      location: {}
+    },
+    errors: {}
   };
 
   handleChange = ({ target: { name, value } }) => {
@@ -18,9 +19,25 @@ class SpotsNew extends React.Component {
     this.setState({ spot });
   }
 
+  handleOnLocationChange = (place) => {
+    const location = {
+      lat: place.geometry.location.lat(),
+      lng: place.geometry.location.lng()
+    };
+
+    const spot = Object.assign({}, this.state.spot, { location });
+    this.setState({ spot }, () => console.log(this.state.spot));
+  }
+
   handleSubmit = (e) => {
     e.preventDefault();
   };
+
+  handleImageUpload = result => {
+    const spot = Object.assign({}, this.state.spot, { image: result.filesUploaded[0].url});
+    const errors = Object.assign({}, this.state.errors, { image: ''});
+    this.setState({ spot, errors });
+  }
 
   componentDidMount() {
     Axios
@@ -40,6 +57,8 @@ class SpotsNew extends React.Component {
         handleOnLocationChange={this.handleOnLocationChange}
         birds={this.state.birds}
         spot={this.state.spot}
+        handleImageUpload={this.handleImageUpload}
+        errors={this.state.errors}
 
       />
     );

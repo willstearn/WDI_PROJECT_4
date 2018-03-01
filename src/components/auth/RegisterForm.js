@@ -1,45 +1,52 @@
-import React        from 'react';
-import RegisterForm from './RegisterForm';
-import Axios        from 'axios';
+import React from 'react';
 
-import Auth from '../../lib/Auth';
+const RegisterForm = ({ handleChange, handleSubmit, user }) => {
+  return (
+    <form onSubmit={handleSubmit}>
+      <div className="form-group">
+        <input
+          type="text"
+          name="username"
+          placeholder="Username"
+          onChange={handleChange}
+          value={user.username}
+          className="form-control"
+        />
+      </div>
+      <div className="form-group">
+        <input
+          type="text"
+          name="email"
+          placeholder="Email"
+          onChange={handleChange}
+          value={user.email}
+          className="form-control"
+        />
+      </div>
+      <div className="form-group">
+        <input
+          type="password"
+          name="password"
+          placeholder="Password"
+          onChange={handleChange}
+          value={user.password}
+          className="form-control"
+        />
+      </div>
+      <div className="form-group">
+        <input
+          type="password"
+          name="passwordConfirmation"
+          placeholder="Confirm Password"
+          onChange={handleChange}
+          value={user.passwordConfirmation}
+          className="form-control"
+        />
+      </div>
 
-class Register extends React.Component {
-  state = {
-    user: {
-      username: '',
-      email: '',
-      password: '',
-      passwordConfirmation: ''
-    }
-  };
+      <button className="btn btn-primary">Login</button>
+    </form>
+  );
+};
 
-  handleChange = ({ target: { name, value }}) => {
-    const user = Object.assign({}, this.state.user, { [name]: value });
-    this.setState({ user });
-  }
-
-  handleSubmit = (e) => {
-    e.preventDefault();
-
-    Axios
-      .post('/api/register', this.state.user)
-      .then(res => {
-        Auth.setToken(res.data.token);
-        this.props.history.push('/');
-      })
-      .catch(err => console.log(err));
-  }
-
-  render() {
-    return (
-      <RegisterForm
-        user={this.state.user}
-        handleChange={this.handleChange}
-        handleSubmit={this.handleSubmit}
-      />
-    );
-  }
-}
-
-export default Register;
+export default RegisterForm;

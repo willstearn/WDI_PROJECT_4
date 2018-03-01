@@ -6,8 +6,11 @@ import Register from '../auth/Register';
 
 import BirdsIndex from '../birds/BirdsIndex';
 import BirdsShow  from  '../birds/BirdsShow';
+import SpotsNew  from  '../spots/SpotsNew';
 
-import ProtectedRoute from './ProtectedRoute';
+// import SpotsShow  from  '../birds/SpotsShow';
+
+// import ProtectedRoute from './ProtectedRoute';
 
 const Routes = () => {
   return (
@@ -15,7 +18,8 @@ const Routes = () => {
       <Route path="/login" component={Login} />
       <Route path="/register" component={Register} />
       <Route exact path="/" component={BirdsIndex} />
-      <ProtectedRoute path="/birds/:id" component={BirdsShow} />
+      <Route path="/birds/:id" component={BirdsShow} />
+      <Route path="/spots/new" component={SpotsNew} />
     </Switch>
   );
 };
