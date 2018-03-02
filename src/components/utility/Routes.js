@@ -24,9 +24,7 @@ const Routes = () => {
       <Route path="/birds/:id" component={BirdsShow} />
       <Route exact path="/spots" component={SpotsIndex} />
       <Route exact path="/spots/new" component={SpotsNew} />
-      <Route path="/spots/new/_id" component={SpotsShow} />
-
-
+      <Route path="/spots/:id" component={SpotsShow} />
     </Switch>
   );
 };

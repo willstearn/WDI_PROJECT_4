@@ -30,7 +30,7 @@ class SpotsIndex extends React.Component {
           <div className="page-banner col-md-12">
             <BackButton history={history} />
           </div>
-          {this.state.spots.map(spot => {
+          {this.state.spots && this.state.spots.map(spot => {
             return(
               <div key={spot.id} className="image-tile col-md-4 col-sm-6 col-xs-12">
                 <Link to={`/spots/${spot.id}`}>

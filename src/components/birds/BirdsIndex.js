@@ -24,7 +24,7 @@ class BirdsIndex extends React.Component {
       <div>
         <div className="row">
           <div className="page-banner col-md-12">
-            { Auth.isAuthenticated() && <Link to="/spots/new" className="main-button"> <i className="fa fa-plus"  aria-hidden="true"></i>Add a spot
+            { Auth.isAuthenticated() && <Link to="/spots/new" className="main-button"> <i className="fa fa-plus"  aria-hidden="true"></i> Filter by color
             </Link>}
           </div>
           {this.state.birds && this.state.birds.map(bird => {

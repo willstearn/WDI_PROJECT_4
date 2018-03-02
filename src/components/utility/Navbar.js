@@ -20,7 +20,9 @@ const Navbar = ({ history }) => {
       {' '}
       { Auth.isAuthenticated() && <a href="#" className="standard-button" onClick={logout}>Logout</a>}
       {' '}
-      { Auth.isAuthenticated() && <Link to="/spots" className="standard-button">My Spots</Link>}
+      { Auth.isAuthenticated() && <Link to="/spots" className="standard-button">Spots</Link>}
+      {' '}
+      { Auth.isAuthenticated() && <Link to="/" className="standard-button">Birds</Link>}
 
     </nav>
   );
