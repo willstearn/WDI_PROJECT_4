@@ -13,7 +13,7 @@ function SpotsForm({ handleSubmit, handleChange, handleOnLocationChange, spot, b
 
       </div>
 
-      <form onSubmit={handleSubmit} className="col-md-6">
+      <form onSubmit={handleSubmit} defaultValue={spot.bird} className="col-md-6">
         <div className="form-group">
           <label>
             Select bird

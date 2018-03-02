@@ -7,10 +7,6 @@ const auth  = require('../controllers/auth');
 
 router.route('/birds')
   .get(birds.index);
-// .post(secureRoute, birds.create);
-
-// router.route('/birds/:id')
-//   .get(birds.show);
 
 router.route('/birds/:id')
   .get(birds.show);
@@ -21,10 +17,21 @@ router.route('/register')
 router.route('/login')
   .post(auth.login);
 
-router.route('/users/:id')
+router.route('/spots/:id')
   .get(spots.show);
 
+router.route('/spots')
+  .get(spots.index)
+  .post(spots.create);
+
 router.all('/*', (req, res) => res.notFound());
+
+module.exports = router;
+
+// .post(secureRoute, birds.create);
+
+// router.route('/birds/:id')
+//   .get(birds.show);
 
 // router.route('/')
 //   .get(statics.index);
@@ -57,5 +64,3 @@ router.all('/*', (req, res) => res.notFound());
 
 // DELETE
 // router.all('*', (req, res) => res.notFound());
-
-module.exports = router;

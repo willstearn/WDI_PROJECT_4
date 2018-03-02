@@ -7,7 +7,8 @@ import Register from '../auth/Register';
 import BirdsIndex from '../birds/BirdsIndex';
 import BirdsShow  from  '../birds/BirdsShow';
 import SpotsNew  from  '../spots/SpotsNew';
-import SpotsNewIndex  from  '../spots/SpotsNewIndex';
+import SpotsIndex  from  '../spots/SpotsIndex';
+import SpotsShow  from  '../spots/SpotsShow';
 
 
 // import SpotsShow  from  '../birds/SpotsShow';
@@ -21,8 +22,10 @@ const Routes = () => {
       <Route path="/register" component={Register} />
       <Route exact path="/" component={BirdsIndex} />
       <Route path="/birds/:id" component={BirdsShow} />
-      <Route path="/spots/new/index" component={SpotsNewIndex} />
-      <Route path="/spots/new" component={SpotsNew} />
+      <Route exact path="/spots" component={SpotsIndex} />
+      <Route exact path="/spots/new" component={SpotsNew} />
+      <Route path="/spots/new/_id" component={SpotsShow} />
+
 
     </Switch>
   );

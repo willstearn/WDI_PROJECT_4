@@ -1,5 +1,4 @@
 import React    from 'react';
-import { Link } from 'react-router-dom';
 import Axios    from 'axios';
 
 class BirdsShow extends React.Component {
@@ -21,7 +20,7 @@ class BirdsShow extends React.Component {
         </div>
         <div className="col-md-6">
           <h3>{this.state.bird.name}</h3>
-          <h4>{this.state.bird.color}</h4>
+          {/* <h4>{this.state.bird.color}</h4> */}
         </div>
       </div>
     );

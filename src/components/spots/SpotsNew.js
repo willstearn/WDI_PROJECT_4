@@ -31,15 +31,21 @@ class SpotsNew extends React.Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-  };
+
+    Axios
+      .post('/api/spots', this.state.spot, {
+        headers: { 'Authorization': `Bearer ${Auth.getToken()}`}
+      })
+      .then(() => this.props.history.push('/'))
+      .catch(err => console.log(err));
+  }
+  // Axios request posting new spot
 
   handleImageUpload = result => {
     const spot = Object.assign({}, this.state.spot, { image: result.filesUploaded[0].url});
     const errors = Object.assign({}, this.state.errors, { image: ''});
     this.setState({ spot, errors });
   }
-
-
 
   componentDidMount() {
     Axios
@@ -50,8 +56,6 @@ class SpotsNew extends React.Component {
       .catch(err => console.log(err));
 
   }
-
-
 
   render() {
     return (

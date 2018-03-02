@@ -1,23 +1,41 @@
 const Spot = require('../models/spot');
-const User = require('../models/user');
+// const User = require('../models/user');
 
-function spotsShow(req, res) {
+function spotsIndex(req, res, next) {
   Spot
-    .find({ createdBy: req.params.id })
+    .find()
     .exec()
-    .then(spots => {
-      User
-        .findById(req.params.id)
-        .exec()
-        .then((user) => {
-          res.render('users/show', { user, spots });
-          // 'users/show'???
-        });
-    });
+    .then((spots) => res.json(spots))
+    .catch(next);
+}
+
+// function spotsShow(req, res) {
+//   Spot
+//     .find({ createdBy: req.params.id })
+//     .exec()
+//     .then(spots => {
+//       User
+//         .findById(req.params.id)
+//         .exec()
+//         .then((user) => {
+//           res.render('users/show', { user, spots });
+//           // 'users/show'???
+//         });
+//     });
+// }
+
+function spotsShow(req, res, next) {
+  Spot
+    .findById(req.params.id)
+    .exec()
+    .then((spot) => {
+      if(!spot) return res.notFound();
+      res.json(spot);
+    })
+    .catch(next);
 }
 
 function spotsCreate(req, res, next) {
-
   Spot
     .create(req.body)
     .then(spot => res.status(201).json(spot))
@@ -25,7 +43,8 @@ function spotsCreate(req, res, next) {
 }
 
 module.exports = {
-  index: spotsCreate,
-  show: spotsShow
+  create: spotsCreate,
+  show: spotsShow,
+  index: spotsIndex
 
 };
