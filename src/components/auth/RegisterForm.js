@@ -44,7 +44,7 @@ const RegisterForm = ({ handleChange, handleSubmit, user }) => {
         />
       </div>
 
-      <button className="btn btn-primary">Login</button>
+      <button className="btn btn-primary">Register</button>
     </form>
   );
 };
