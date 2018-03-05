@@ -43,9 +43,9 @@ const birdData = [{
   image: 'http://www.birdid.co.uk/Static/Images/Img01039V001.jpg',
   color: ['brown', 'speckled']
 },{
-  name: 'Sedge Warbler',
-  image: 'http://www.birdid.co.uk/Static/Images/Img00040V001.jpg',
-  color: ['brown', 'grey']
+  name: 'Yvette',
+  image: 'https://vg-images.condecdn.net/image/5w2MEPvWGG8/crop/405',
+  color: ['black & white']
 }];
 
 

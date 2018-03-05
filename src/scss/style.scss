@@ -83,6 +83,8 @@ h2 {
 
 button, .main-button, .standard-button {
   margin-bottom: 20px;
+  margin-left: 10px;
+  margin-top: 10px;
   padding: 3px 5px;
   color: #fff;
   border-radius: 2px;
@@ -132,6 +134,14 @@ i {
 main {
   padding-top: 0px;
 }
+
+.google-map {
+  border: 1px solid #888;
+  padding-top: 100%;
+  overflow: hidden;
+}
+
+
 
 @media screen and (max-width: 750px) {
   .fa-cutlery {

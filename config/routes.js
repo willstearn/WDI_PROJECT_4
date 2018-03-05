@@ -18,7 +18,9 @@ router.route('/login')
   .post(auth.login);
 
 router.route('/spots/:id')
-  .get(spots.show);
+  .get(spots.show)
+  .put(spots.update)
+  .delete(spots.delete);
 
 router.route('/spots')
   .get(spots.index)

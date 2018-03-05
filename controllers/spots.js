@@ -43,9 +43,31 @@ function spotsCreate(req, res, next) {
     .catch(next);
 }
 
+function spotsUpdate(req, res, next) {
+  Spot
+    .findByIdAndUpdate(req.params.id, req.body, {new: true})
+    .then(spot => res.status(200).json(spot))
+    .catch(next);
+}
+
+function spotsDelete(req, res, next) {
+  Spot
+    .findById(req.params.id)
+    .exec()
+    .then((spot) => {
+      if(!spot) return res.notFound();
+      return spot.remove();
+    })
+    .then(() => res.status(204).end())
+    .catch(next);
+}
+
+
+
 module.exports = {
   create: spotsCreate,
   show: spotsShow,
-  index: spotsIndex
-
+  index: spotsIndex,
+  update: spotsUpdate,
+  delete: spotsDelete
 };

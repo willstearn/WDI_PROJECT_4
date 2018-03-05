@@ -16,6 +16,16 @@ class BirdsShow extends React.Component {
       .then(res => this.setState({ bird: res.data }))
       .catch(err => console.log(err));
   }
+
+  deleteSpot = () => {
+    Axios
+      .delete(`/api/spots/${this.props.match.params.id}`, {
+        headers: { 'Authorization': `Bearer ${Auth.getToken()}`}
+      })
+      .then(() => this.props.history.push('/'))
+      .catch(err => console.log(err));
+  }
+
   render() {
     return (
       <div className="row">

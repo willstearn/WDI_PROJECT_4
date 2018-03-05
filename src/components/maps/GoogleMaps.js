@@ -1,12 +1,19 @@
 
 /* global google */
-import mapStyles from './mapStyles';
+// import mapStyles from './config/mapStyles';
 import React from 'react';
 
 class GoogleMap extends React.Component {
   state = {
-    center: { lat: 51.5085300, lng: -0.1257400 }
-  };
+
+    center: { lat: 0, lng: 0 }
+  }
+
+  constructor(props){
+    super(props);
+
+    this.state = { center: this.props };
+  }
 
   render() {
     return (
@@ -20,8 +27,8 @@ class GoogleMap extends React.Component {
   componentDidMount() {
     this.map = new google.maps.Map(this.mapCanvas, {
       center: this.state.center,
-      zoom: 14,
-      styles: mapStyles
+      zoom: 14
+      // styles: mapStyles
     });
     this.marker = new google.maps.Marker({
       map: this.map,
@@ -29,7 +36,7 @@ class GoogleMap extends React.Component {
     });
   }
   componentWillUnmount() {
-    this.map = null;
+    // this.map = null;
     this.marker = null;
     this.map = null;
   }
